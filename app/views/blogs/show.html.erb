@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="show">
+  <p>title: <%= @blog.title %></p>
+  <p>content: <%= @blog.content %></p>
+  
+</div>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
