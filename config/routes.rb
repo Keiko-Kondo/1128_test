@@ -1,18 +1,9 @@
 Rails.application.routes.draw do
   if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
-  end
+      mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+    end
   post "/graphql", to: "graphql#execute"
   root  'blogs#index'
   resources :blogs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-# Proc.routes.draw do
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
-  end
-  post "/graphql", to: "graphql#execute"
-#   resources :blogs
-#   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-# end
